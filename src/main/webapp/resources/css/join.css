@@ -1,0 +1,31 @@
+body {
+    background-color: #ffffff;
+    font-family: "Noto Sans JP", sans-serif;
+}
+.register-container {
+    max-width: 480px;
+    margin: 60px auto;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 40px 35px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    border: 2px solid #ceb597;
+}
+.register-container h2 {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #5e4c3a;
+}
+.form-label {
+    font-weight: 600;
+    color: #5a4c3a;
+}
+.btn-primary {
+    background-color: #ceb597;
+    border: none;
+    color: #fff;
+}
+.btn-primary:hover {
+    background-color: #bca27f;
+}

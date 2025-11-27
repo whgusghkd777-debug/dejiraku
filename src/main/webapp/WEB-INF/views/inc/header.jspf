@@ -1,0 +1,66 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="cpath" value="${pageContext.request.contextPath}" />
+<c:set var="isMain" value="${requestScope.isMain}" />
+
+<style>
+  /* === Header color normalization: always win === */
+  .site-header .brand,
+  .site-header .brand a { color:#ceb597 !important; text-decoration:none; }
+  .site-header .brand .welcome { color:#333 !important; font-weight:500; }
+
+  .site-header .nav a { 
+    color:#333 !important; 
+    text-decoration:none; 
+    margin-left:20px;           /* 메인과 동일 간격 */
+  }
+  .site-header .nav a:hover { color:#ceb597 !important; }
+
+  /* ← 문제의 로그아웃 버튼(폼 submit)을 링크처럼 보이게 강제 */
+  .site-header .nav .link-logout{
+    appearance:none !important;
+    -webkit-appearance:none !important;
+    background:none !important;
+    border:none !important;
+    padding:0 !important;
+    margin-left:20px !important; /* 링크들과 간격 동일 */
+    color:#333 !important;
+    font:inherit !important;
+    line-height:1 !important;
+    cursor:pointer !important;
+  }
+  .site-header .nav .link-logout:hover{ color:#ceb597 !important; }
+</style>
+
+
+<header class="site-header">
+  <div class="container header-inner">
+    <h1 class="brand" style="margin:0;">
+      <c:choose>
+        <c:when test="${isMain == true}">
+          <span>デジ楽　ホテル</span>
+        </c:when>
+        <c:otherwise>
+          <a href="${cpath}/">デジ楽　ホテル</a>
+        </c:otherwise>
+      </c:choose>
+      <c:if test="${not empty sessionScope.loginUser}">
+        <span class="welcome">${sessionScope.loginUser.name} 様、歓迎します。</span>
+      </c:if>
+    </h1>
+    <nav class="nav">
+      <c:if test="${not empty sessionScope.loginUser}">
+        <a href="${cpath}/mypage">マイページ</a>
+      </c:if>
+      <c:choose>
+        <c:when test="${not empty sessionScope.loginUser}">
+          <form action="${cpath}/logout" method="post" style="display:inline;margin:0;">
+            <button type="submit" class="link-logout">ログアウト</button>
+          </form>
+        </c:when>
+        <c:otherwise>
+          <a href="${cpath}/login">ログイン</a>
+        </c:otherwise>
+      </c:choose>
+    </nav>
+  </div>
+</header>
