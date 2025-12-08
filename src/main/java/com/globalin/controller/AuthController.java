@@ -16,12 +16,11 @@ public class AuthController {
 
     @Autowired
     private MemberService memberService;
+    
+// 로그인 화면 보여주기
+// - 이미 로그인된 상태면 next 페이지나 홈으로 이동
+// - 로그인 안 된 상태면 로그인 폼 페이지로 이동
 
-    /**
-     * 로그인 폼
-     * - 이미 로그인되어 있으면 next(있으면) 또는 홈으로 보냄
-     * - 로그인 폼에 next를 그대로 넘겨서 hidden으로 다시 제출할 수 있도록 함
-     */
     @GetMapping("/login")
     public String loginForm(@RequestParam(value = "next", required = false) String next,
                             HttpSession session,
@@ -38,11 +37,10 @@ public class AuthController {
         return "login";
     }
 
-    /**
-     * 로그인 처리
-     * - 실패 시 에러메시지와 next를 그대로 들고 로그인 화면으로
-     * - 성공 시 next(있으면)로, 없으면 홈으로
-     */
+// 로그인 처리
+// - 아이디/비번 확인 (memberService.login 호출)
+// - 실패: 에러 메시지와 함께 로그인 화면 다시 보여줌
+// - 성공: 세션에 loginUser 저장 후 next 페이지나 홈으로 이동
     @PostMapping("/login")
     public String doLogin(@RequestParam("username") String userId,
                           @RequestParam("password") String rawPassword,
@@ -65,10 +63,10 @@ public class AuthController {
         return "redirect:/";
     }
 
-    /**
-     * 로그아웃
-     * - next가 있으면 거기로, 없으면 홈으로
-     */
+ 
+// 로그아웃 처리
+// - 세션을 완전히 종료 (invalidate)
+// - next 페이지가 있으면 거기로, 없으면 홈으로 이동
     @PostMapping("/logout")
     public String logout(@RequestParam(value = "next", required = false) String next,
                          HttpSession session) {
@@ -78,4 +76,5 @@ public class AuthController {
         }
         return "redirect:/";
     }
+
 }
