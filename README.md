@@ -61,7 +61,7 @@ public class ReservationService {
     }
 }
 ```
-（実務で: 複数人が同時に同じ部屋を予約しようとした時の衝突防止。楽観的ロックは性能が良くてよく使われる。）
+
 
 ### 核心コード例2: MyBatis SQLチューニング例
 ```xml
