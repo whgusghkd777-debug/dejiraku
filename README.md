@@ -1,6 +1,7 @@
 # Deziraku (デジラク) - ホテル予約システム
 
-https://www.notion.so/PPT-2d278b58bbbf80859a7ada329ae52326   PPT
+
+
 
 ホテルや宿泊施設を検索し、リアルタイムで部屋の空き状況を確認・予約・決제できるウェブサービスです。  
 ユーザーがチェックイン・チェックアウトの日付と人数を入力すると、すぐに予約可能な部屋を表示します。  
@@ -92,3 +93,7 @@ public class ReservationService {
 貢献大歓迎！イシューやプルリクエストお待ちしています。
 
 
+
+メール　：　whgusghkd777@gmail.com
+デジ楽　PPT :　https://www.notion.so/PPT-2d278b58bbbf80859a7ada329ae52326   
+技術ブログ 　：　https://url.kr/xt4qjr
