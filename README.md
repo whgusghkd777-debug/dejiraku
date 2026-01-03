@@ -95,5 +95,7 @@ public class ReservationService {
 
 
 メール　：　whgusghkd777@gmail.com
+
 デジ楽　PPT :　https://www.notion.so/PPT-2d278b58bbbf80859a7ada329ae52326   
+
 技術ブログ 　：　https://url.kr/xt4qjr
