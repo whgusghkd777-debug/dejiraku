@@ -13,7 +13,7 @@ Spring MVCベースで、ユーザー中心のシンプルな予約フローを�
 
 | カテゴリ     | 技術                          |
 |--------------|-------------------------------|
-| バックエンド | Java 8 + Spring MVC + JdbcTemplate |
+| バックエンド | Java 1.8 + Spring MVC + JdbcTemplate |
 | データベース | Oracle DB                     |
 | フロントエンド | JSP + JSTL + Bootstrap        |
 | サーバー     | Apache Tomcat                 |
