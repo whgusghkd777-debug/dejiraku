@@ -152,4 +152,5 @@ public class ReservationDaoImpl {
 **連絡先**  
 メール: whgusghkd777@gmail.com  
 PPT資料: https://www.notion.so/PPT-2d278b58bbbf80859a7ada329ae52326
+Ruby,Java,Kotlin var   : https://github.com/whgusghkd777-debug/DejirakuRb-kt
 ```
