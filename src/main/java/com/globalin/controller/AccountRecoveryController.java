@@ -21,10 +21,7 @@ public class AccountRecoveryController {
         this.memberDao = memberDao;
         this.passwordEncoder = passwordEncoder;
     }
-
-    /** =====================
-     *  🔹 아이디 찾기 (POST)
-     *  ===================== */
+    // ID 探すこと
     @PostMapping("/id")
     public String findId(@RequestParam String name,
                          @RequestParam String email,
@@ -38,10 +35,7 @@ public class AccountRecoveryController {
         }
         return "recovery/result"; // /WEB-INF/views/recovery/result.jsp
     }
-
-    /** =====================
-     *  🔹 비밀번호 재발급 (POST)
-     *  ===================== */
+// Pw探す
     @PostMapping("/pw")
     public String findPw(@RequestParam String userid,
                          @RequestParam String email,
@@ -93,3 +87,4 @@ public class AccountRecoveryController {
         return sb.toString();
     }
 }
+
