@@ -17,11 +17,7 @@ public class AuthController {
     @Autowired
     private MemberService memberService;
 
-    /**
-     * 로그인 폼
-     * - 이미 로그인되어 있으면 next(있으면) 또는 홈으로 보냄
-     * - 로그인 폼에 next를 그대로 넘겨서 hidden으로 다시 제출할 수 있도록 함
-     */
+    
     @GetMapping("/login")
     public String loginForm(@RequestParam(value = "next", required = false) String next,
                             HttpSession session,
@@ -78,4 +74,5 @@ public class AuthController {
         }
         return "redirect:/";
     }
+
 }
