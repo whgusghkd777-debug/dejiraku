@@ -47,14 +47,14 @@ public class AccountRecoveryController {
             return "recovery/result";
         }
 
-        // 1️⃣ 임시 비밀번호 생성
+        
         String temp = generateTempPassword(10);
 
-        // 2️⃣ 해시화 후 DB에 저장
+        
         String hash = passwordEncoder.encode(temp);
         int updated = memberDao.updatePasswordHashByUseridAndEmail(userid, email, hash);
 
-        // 3️⃣ 결과 처리
+        
         if (updated > 0) {
             model.addAttribute("ok", "仮パスワード: " + temp + "  (ログイン後に変更してください)");
         } else {
@@ -64,18 +64,14 @@ public class AccountRecoveryController {
         return "recovery/result";
     }
 
-    /** =====================
-     *  🔹 GET 접근 시 안내문
-     *  ===================== */
+    
     @GetMapping({"/id", "/pw"})
     @ResponseBody
     public String methodNotAllowed() {
         return "このエンドポイントはPOSTのみ対応しています。";
     }
 
-    /** =====================
-     *  🔹 임시 비밀번호 생성 헬퍼
-     *  ===================== */
+    
     private static final String ALPH =
             "ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789";
     private static final SecureRandom RND = new SecureRandom();
@@ -87,4 +83,5 @@ public class AccountRecoveryController {
         return sb.toString();
     }
 }
+
 
