@@ -1,4 +1,4 @@
-com.globalin.controller;
+package com.globalin.controller;
 
 
 
@@ -21,3 +21,4 @@ public class MainController {
 
     }
 }
+
