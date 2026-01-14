@@ -6,7 +6,7 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 # 2단계: 실행 환경 (가볍고 빠른 서빙용 테이블)
-FROM openjdk:17-jdk-slim
+FROM eclipse-temurin:17-jre
 WORKDIR /app
 # 빌드 단계에서 만들어진 JAR 파일을 app.jar라는 이름으로 가져옵니다.
 COPY --from=build /app/target/*.jar app.jar
